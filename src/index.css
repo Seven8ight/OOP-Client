@@ -1,0 +1,1310 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rouge+Script&display=swap");
+#Auth {
+  width: 95%;
+  height: 90vh;
+  margin: auto;
+  position: relative;
+  top: 3vh;
+  display: flex;
+  box-shadow: 0 0 15px 0 rgba(200, 200, 200, 0.5);
+  border-radius: 10px;
+  justify-content: space-between;
+}
+#Auth #sidebar {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+#Auth #sidebar img {
+  width: 35vw;
+  height: 90vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+#Auth #sidebar #text {
+  width: 40%;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+#Auth #sidebar #text #logo {
+  display: flex;
+  position: relative;
+  top: 30px;
+  left: 30px;
+}
+#Auth #sidebar #text #logo img {
+  width: 15%;
+  height: 15%;
+  color: white;
+}
+#Auth #sidebar #text #logo p {
+  font-family: "Dancing Script", sans-serif;
+  color: white;
+  font-size: 2.5em;
+  position: relative;
+  bottom: 20px;
+  left: 10px;
+}
+#Auth #sidebar #text #motto {
+  z-index: 999;
+  width: 100%;
+  height: 160px;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+}
+#Auth #sidebar #text #motto p:first-of-type {
+  font-size: 2.5em;
+  font-family: "Dancing Script", sans-serif;
+}
+#Auth #sidebar #text #motto p:last-of-type {
+  position: relative;
+  right: 70px;
+  bottom: 20px;
+  font-size: 1.3em;
+  font-family: "Rouge Script", sans-serif;
+  text-align: right;
+}
+#Auth #page {
+  width: 45%;
+  align-self: center;
+  height: 70%;
+  padding: 5px;
+  box-shadow: 0 0 15px 0 rgba(200, 200, 200, 0.5);
+  border-radius: 10px;
+  position: relative;
+  right: 7%;
+  z-index: 999;
+}
+#Auth #page h2 {
+  position: relative;
+  left: 40px;
+  font-size: 2em;
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 500;
+}
+#Auth #page p {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+#Auth #page form {
+  margin: auto;
+  display: block;
+  width: 50%;
+  height: 400px;
+  position: relative;
+  top: 30px;
+}
+#Auth #page form label {
+  font-family: "Rouge Script", sans-serif;
+  font-weight: 400;
+  font-size: 1.25em;
+}
+#Auth #page form input:not([type=checkbox]) {
+  width: 250px;
+  position: relative;
+  left: 30px;
+  margin-bottom: 50px;
+  margin-top: 10px;
+  border: none;
+  border-bottom: 1px solid black;
+  background: transparent;
+  font-family: "Roboto Flex", sans-serif;
+  text-align: center;
+}
+#Auth #page form input:not([type=checkbox]):focus {
+  outline: none;
+}
+#Auth #page form #terms {
+  text-align: center;
+}
+#Auth #page form #terms input {
+  position: relative;
+  right: 20px;
+}
+#Auth #page form button {
+  display: block;
+  margin: auto;
+  padding: 7.5px;
+  width: 150px;
+  position: relative;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 1.25em;
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+  font-family: "Dancing Script", sans-serif;
+}
+#Auth #page form button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: black;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+#Auth #page form button:hover {
+  color: white;
+}
+#Auth #page form button:hover::after {
+  transform-origin: right;
+  transform: scaleX(1);
+}
+#Auth #page #Login h2 {
+  position: relative;
+  top: 20px;
+}
+#Auth #page #Login p {
+  position: relative;
+  top: 30px;
+}
+#Auth #page #Login form {
+  position: relative;
+  top: 80px;
+}
+#Auth #select {
+  position: absolute;
+  left: 63%;
+  bottom: 6%;
+}
+#Auth #select p {
+  font-family: "Roboto Flex", sans-serif;
+}
+#Auth #select p button {
+  background: transparent;
+  border: none;
+  color: grey;
+  font-size: medium;
+  cursor: pointer;
+}
+#Auth #select p button:hover {
+  color: black;
+}
+
+#Landing {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  overflow: hidden;
+}
+#Landing .top-navbar {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 3;
+}
+#Landing .top-navbar .user-settings {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-family: "Roboto", sans-serif;
+}
+#Landing .top-navbar .user-settings i {
+  pointer-events: none;
+}
+#Landing .top-navbar .user-settings:hover {
+  color: #00d084;
+}
+#Landing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("./Assets/samuel-berner-A5GmtHW3O9k-unsplash.jpg") center/cover no-repeat;
+  z-index: 0;
+}
+#Landing::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+#Landing .left,
+#Landing .right {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+#Landing .left {
+  max-width: 50%;
+  font-family: "Roboto", sans-serif;
+}
+#Landing .left h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+#Landing .left p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #f1f1f1;
+}
+#Landing .left ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+#Landing .left ul li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 1.1rem;
+  color: #eaeaea;
+}
+#Landing .left ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #00d084;
+  font-weight: bold;
+}
+#Landing .left .getStarted, #Landing .left .adminBtn,
+#Landing .left .branchBtn {
+  display: block;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  background: linear-gradient(135deg, #f1f1f1, #dcdcdc);
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  cursor: pointer;
+  width: 75%;
+  font-family: "Roboto", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+#Landing .left .getStarted:hover, #Landing .left .adminBtn:hover,
+#Landing .left .branchBtn:hover {
+  background: linear-gradient(135deg, #eaeaea, #cfcfcf);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+#Landing .left .getStarted:active, #Landing .left .adminBtn:active,
+#Landing .left .branchBtn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+#Landing .left .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+#Landing .left .buttons .branches {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  position: relative;
+  left: 5.5vw;
+}
+#Landing .left .buttons .branches button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #e4e4e4, #c4c4c4);
+  color: #222;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#Landing .left .buttons .branches button:hover {
+  background: linear-gradient(135deg, #dcdcdc, #bdbdbd);
+}
+#Landing .left .adminBtn,
+#Landing .left .branchBtn {
+  background: linear-gradient(135deg, #e4e4e4, #c4c4c4);
+  color: #222;
+}
+#Landing .left .adminBtn:hover,
+#Landing .left .branchBtn:hover {
+  background: linear-gradient(135deg, #dcdcdc, #bdbdbd);
+}
+#Landing .right img {
+  max-width: 250px;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.6));
+}
+
+.ProductsPage {
+  padding: 2rem;
+  background-color: #fdfdfd;
+  min-height: 100vh;
+}
+.ProductsPage h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+.ProductsPage #empty {
+  position: relative;
+  left: 34vw;
+  width: 100%;
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  border: 2px dashed #ccc;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  font-family: "Roboto", sans-serif;
+  color: #555;
+  animation: fadeIn 0.4s ease-in-out;
+}
+.ProductsPage #empty p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #999;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.ProductsPage .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.ProductsPage .product-card {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.ProductsPage .product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+.ProductsPage .product-card h2 {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+.ProductsPage .product-card p {
+  font-size: 1rem;
+  color: #444;
+}
+.ProductsPage .ProductsPage {
+  padding: 2rem;
+}
+.ProductsPage .ProductsPage .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ProductsPage .ProductsPage .header .back-button {
+  background: #eee;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+.ProductsPage .ProductsPage .header .back-button:hover {
+  background: #ddd;
+}
+.ProductsPage .ProductsPage .product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.ProductsPage .ProductsPage .product-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+}
+
+.ProductPage {
+  padding: 2rem;
+  min-height: 100vh;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+.ProductPage .back-button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-bottom: 1.5rem;
+}
+.ProductPage .back-button:hover {
+  background-color: #0056b3;
+}
+.ProductPage.error, .ProductPage.loading {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+.ProductPage.error .back-button, .ProductPage.loading .back-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+.ProductPage.error .back-button:hover, .ProductPage.loading .back-button:hover {
+  color: #0056b3;
+}
+.ProductPage.error {
+  color: red;
+}
+.ProductPage .product-details {
+  max-width: 500px;
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto", sans-serif;
+}
+.ProductPage .product-details .quantity-input {
+  width: 100%;
+  margin: 0.5rem 0 1rem;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+.ProductPage .product-details .quantity-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+.ProductPage .product-details .back-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  position: relative;
+  left: 32vw;
+}
+.ProductPage .product-details .back-button:hover {
+  color: #0056b3;
+}
+.ProductPage .product-details h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+.ProductPage .product-details .description {
+  font-style: italic;
+  color: #666;
+  font-family: "Rouge Script", cursive;
+  font-size: 1.1rem;
+}
+.ProductPage .product-details p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+.ProductPage .product-details .edit-button,
+.ProductPage .product-details .delete-button,
+.ProductPage .product-details .add-to-order {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: background 0.3s ease-in-out;
+  font-family: "Roboto", sans-serif;
+}
+.ProductPage .product-details .add-to-order {
+  background-color: #28a745;
+  color: white;
+}
+.ProductPage .product-details .add-to-order:hover {
+  background-color: #218838;
+}
+.ProductPage .product-details .edit-button {
+  background-color: #007bff;
+  color: white;
+}
+.ProductPage .product-details .edit-button:hover {
+  background-color: #0056b3;
+}
+.ProductPage .product-details .delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+.ProductPage .product-details .delete-button:hover {
+  background-color: #a71d2a;
+}
+
+.GlobalProducts {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+}
+.GlobalProducts .sidebar {
+  width: 220px;
+  background-color: #f1f3f5;
+  padding: 1rem;
+  border-right: 1px solid #ccc;
+}
+.GlobalProducts .sidebar h2 {
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+.GlobalProducts .sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.GlobalProducts .sidebar ul li {
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.GlobalProducts .sidebar ul li:hover {
+  background-color: #dceeff;
+}
+.GlobalProducts .content {
+  flex: 1;
+  padding: 2rem;
+}
+.GlobalProducts .content .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.GlobalProducts .content .header h1 {
+  margin: 0;
+  color: #333;
+}
+.GlobalProducts .content .header .back-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.GlobalProducts .content .header .back-button:hover {
+  text-decoration: underline;
+}
+.GlobalProducts .content .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.GlobalProducts .content .product-grid .product-card {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.GlobalProducts .content .product-grid .product-card:hover {
+  transform: translateY(-4px);
+}
+.GlobalProducts .content .product-grid .product-card h3 {
+  margin: 0 0 0.5rem;
+}
+.GlobalProducts .content .product-grid .product-card .branch {
+  font-size: 0.85rem;
+  color: #555;
+  font-style: italic;
+}
+.GlobalProducts .content .product-grid .product-card p {
+  margin: 0.25rem 0;
+}
+.GlobalProducts.loading, .GlobalProducts.error {
+  text-align: center;
+  padding: 2rem;
+}
+.GlobalProducts.loading .back-button, .GlobalProducts.error .back-button {
+  margin-bottom: 1rem;
+  color: #007bff;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.GlobalProducts.loading .back-button:hover, .GlobalProducts.error .back-button:hover {
+  text-decoration: underline;
+}
+
+.AdminPage {
+  padding: 2rem;
+  background: #f7f9fc;
+  min-height: 100vh;
+}
+.AdminPage.loading, .AdminPage.error {
+  text-align: center;
+}
+.AdminPage.loading .back-button, .AdminPage.error .back-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+.AdminPage.loading .back-button:hover, .AdminPage.error .back-button:hover {
+  color: #0056b3;
+}
+.AdminPage .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.AdminPage .header .header-buttons {
+  display: flex;
+  gap: 1rem;
+}
+.AdminPage .header .header-buttons .back-button,
+.AdminPage .header .header-buttons .add-product-button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+.AdminPage .header .header-buttons .back-button {
+  background-color: #ccc;
+  color: #333;
+}
+.AdminPage .header .header-buttons .back-button:hover {
+  background-color: #bbb;
+}
+.AdminPage .header .header-buttons .add-product-button {
+  background-color: #007bff;
+  color: white;
+}
+.AdminPage .header .header-buttons .add-product-button:hover {
+  background-color: #0056b3;
+}
+.AdminPage section {
+  margin-bottom: 3rem;
+}
+.AdminPage section h2 {
+  color: #444;
+  margin-bottom: 1rem;
+}
+.AdminPage section .table-container {
+  overflow-x: auto;
+}
+.AdminPage section .table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.AdminPage section .table-container table th,
+.AdminPage section .table-container table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+.AdminPage section .table-container table th {
+  background: #f0f0f0;
+  color: #333;
+}
+.AdminPage section .table-container table tr:hover {
+  background: #f9f9f9;
+}
+
+.BranchAdminPage {
+  padding: 2rem;
+  background-color: #fdfdfd;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.BranchAdminPage .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.BranchAdminPage .header h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+.BranchAdminPage .header .back-button {
+  padding: 0.5rem 1rem;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.BranchAdminPage .header .back-button:hover {
+  background-color: #1a242f;
+}
+.BranchAdminPage .transactions,
+.BranchAdminPage .inventory {
+  margin-top: 2rem;
+}
+.BranchAdminPage .transactions h2,
+.BranchAdminPage .inventory h2 {
+  margin-bottom: 1rem;
+  color: #34495e;
+}
+.BranchAdminPage .transactions .table-container,
+.BranchAdminPage .inventory .table-container {
+  overflow-x: auto;
+}
+.BranchAdminPage .transactions .table-container table,
+.BranchAdminPage .inventory .table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+.BranchAdminPage .transactions .table-container table th,
+.BranchAdminPage .transactions .table-container table td,
+.BranchAdminPage .inventory .table-container table th,
+.BranchAdminPage .inventory .table-container table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+.BranchAdminPage .transactions .table-container table th,
+.BranchAdminPage .inventory .table-container table th {
+  background-color: #ecf0f1;
+  color: #333;
+}
+.BranchAdminPage .transactions .table-container table tbody tr:hover,
+.BranchAdminPage .inventory .table-container table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+.BranchAdminPage.loading, .BranchAdminPage.error {
+  text-align: center;
+  padding: 5rem;
+  color: #666;
+}
+.BranchAdminPage.loading .back-button, .BranchAdminPage.error .back-button {
+  margin-bottom: 2rem;
+}
+
+.UserSettingsPage {
+  padding: 2rem;
+  background-color: #fafafa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.UserSettingsPage .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.UserSettingsPage .header h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+.UserSettingsPage .header .back-button {
+  padding: 0.5rem 1rem;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.UserSettingsPage .header .back-button:hover {
+  background-color: #1a242f;
+}
+.UserSettingsPage .info {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.UserSettingsPage .info p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+.UserSettingsPage .info p strong {
+  color: #34495e;
+}
+.UserSettingsPage .info .logout-button {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.UserSettingsPage .info .logout-button:hover {
+  background-color: #d9363e;
+}
+.UserSettingsPage .update-form {
+  margin-top: 2rem;
+  background: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  max-width: 100%;
+}
+.UserSettingsPage .update-form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+.UserSettingsPage .update-form label input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.UserSettingsPage .update-form button {
+  padding: 0.6rem 1.2rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.UserSettingsPage .update-form button:hover {
+  background: #0056b3;
+}
+.UserSettingsPage .update-form .success {
+  margin-top: 1rem;
+  color: green;
+}
+.UserSettingsPage .update-form .error-msg {
+  margin-top: 1rem;
+  color: red;
+}
+.UserSettingsPage.loading, .UserSettingsPage.error {
+  text-align: center;
+  padding: 5rem;
+  color: #666;
+}
+.UserSettingsPage.loading .back-button, .UserSettingsPage.error .back-button {
+  margin-bottom: 2rem;
+}
+
+.OrdersPage {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: "Segoe UI", sans-serif;
+}
+.OrdersPage .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.OrdersPage .header h1 {
+  font-size: 2rem;
+  color: #333;
+}
+.OrdersPage .header .back-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.OrdersPage .header .back-button:hover {
+  color: #0056b3;
+}
+.OrdersPage .create-order {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.OrdersPage .create-order:hover {
+  background-color: #218838;
+}
+.OrdersPage .orders-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.OrdersPage .orders-list .order-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  padding: 1.2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.OrdersPage .orders-list .order-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+.OrdersPage .orders-list .order-card p {
+  margin: 0.4rem 0;
+  color: #444;
+}
+.OrdersPage .orders-list .order-card p strong {
+  color: #000;
+}
+.OrdersPage .orders-list .order-card .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.OrdersPage .orders-list .order-card .actions button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+.OrdersPage .orders-list .order-card .actions button:nth-child(1) {
+  background-color: #007bff;
+  color: white;
+}
+.OrdersPage .orders-list .order-card .actions button:nth-child(1):hover {
+  background-color: #0056b3;
+}
+.OrdersPage .orders-list .order-card .actions button:nth-child(2) {
+  background-color: #dc3545;
+  color: white;
+}
+.OrdersPage .orders-list .order-card .actions button:nth-child(2):hover {
+  background-color: #a71d2a;
+}
+.OrdersPage .orders-list .order-card .actions button:nth-child(3) {
+  background-color: #ffc107;
+  color: #212529;
+}
+.OrdersPage .orders-list .order-card .actions button:nth-child(3):hover {
+  background-color: #e0a800;
+}
+.OrdersPage.loading, .OrdersPage.error {
+  text-align: center;
+  color: #666;
+}
+.OrdersPage.loading button, .OrdersPage.error button {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.OrdersPage.loading button:hover, .OrdersPage.error button:hover {
+  text-decoration: underline;
+}
+.OrdersPage.loading p, .OrdersPage.error p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.PaymentPage {
+  padding: 2rem;
+  background-color: #fdfdfd;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.PaymentPage .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.PaymentPage .header h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+.PaymentPage .header .back-button {
+  padding: 0.5rem 1rem;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.PaymentPage .header .back-button:hover {
+  background-color: #1a242f;
+}
+.PaymentPage .details {
+  text-align: center;
+}
+.PaymentPage .details p {
+  font-size: 1.25rem;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+}
+.PaymentPage .details .item-list {
+  margin-top: 2rem;
+}
+.PaymentPage .details .item-list h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 600;
+  font-family: "Dancing Script", cursive;
+}
+.PaymentPage .details .item-list .item-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.PaymentPage .details .item-list .item-card:hover {
+  transform: translateY(-4px);
+}
+.PaymentPage .details .item-list .item-card p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+.PaymentPage .details .item-list .item-card p strong {
+  color: #444;
+}
+.PaymentPage .details .pay-button {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.PaymentPage .details .pay-button:hover {
+  background-color: #1f8e4d;
+}
+.PaymentPage.loading, .PaymentPage.error {
+  text-align: center;
+  padding: 4rem;
+  color: #666;
+}
+.PaymentPage.loading .back-button, .PaymentPage.error .back-button {
+  margin-bottom: 1.5rem;
+}
+
+.EditProductPage {
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+  font-family: "Roboto", sans-serif;
+}
+.EditProductPage h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #007bff;
+}
+.EditProductPage .form {
+  display: flex;
+  flex-direction: column;
+}
+.EditProductPage .form label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.EditProductPage .form input,
+.EditProductPage .form textarea {
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.EditProductPage .form .submit-btn,
+.EditProductPage .form .cancel-btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.EditProductPage .form .submit-btn {
+  background-color: #28a745;
+  color: white;
+}
+.EditProductPage .form .submit-btn:hover {
+  background-color: #218838;
+}
+.EditProductPage .form .cancel-btn {
+  background-color: #dc3545;
+  color: white;
+}
+.EditProductPage .form .cancel-btn:hover {
+  background-color: #a71d2a;
+}
+.EditProductPage.error {
+  color: red;
+  text-align: center;
+}
+
+.not-found {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  background: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+.not-found h1 {
+  font-size: 3rem;
+  color: #dc3545;
+  margin-bottom: 2rem;
+  font-family: "Dancing Script", cursive;
+}
+.not-found button {
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+.not-found button:first-of-type {
+  background-color: #007bff;
+  color: white;
+}
+.not-found button:first-of-type:hover {
+  background-color: #0056b3;
+}
+.not-found button:last-of-type {
+  background-color: #28a745;
+  color: white;
+}
+.not-found button:last-of-type:hover {
+  background-color: #1e7e34;
+}
+
+.AddProductPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f8f8f8;
+  font-family: "Roboto", sans-serif;
+}
+.AddProductPage .form-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+.AddProductPage .form-card h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5rem;
+  color: #333;
+}
+.AddProductPage .form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.AddProductPage .form-card form input,
+.AddProductPage .form-card form select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+.AddProductPage .form-card form input:focus,
+.AddProductPage .form-card form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.AddProductPage .form-card form button {
+  padding: 0.75rem 1rem;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+.AddProductPage .form-card form button:hover {
+  background-color: #0056b3;
+}
+.AddProductPage .form-card .error {
+  color: red;
+  text-align: center;
+  margin-top: 1rem;
+}
+.AddProductPage .form-card .success {
+  color: green;
+  text-align: center;
+  margin-top: 1rem;
+}/*# sourceMappingURL=index.css.map */
