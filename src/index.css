@@ -948,6 +948,23 @@
 .UserSettingsPage.loading .back-button, .UserSettingsPage.error .back-button {
   margin-bottom: 2rem;
 }
+.UserSettingsPage .transactions {
+  margin-top: 2rem;
+}
+.UserSettingsPage .transactions table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.UserSettingsPage .transactions table th,
+.UserSettingsPage .transactions table td {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+.UserSettingsPage .transactions table th {
+  background-color: #f5f5f5;
+}
 
 .OrdersPage {
   padding: 2rem;

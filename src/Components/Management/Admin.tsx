@@ -38,16 +38,17 @@ type user = {
 };
 
 const AdminHQ: React.FC = () => {
-  const [_, setTransactions] = useState<Transaction[]>([]),
+  const [transactions, setTransactions] = useState<Transaction[]>([]),
     [inventory, setInventory] = useState<InventoryItem[]>([]),
     [loading, setLoading] = useState(true),
-    [branchTransactions, setBranchTransactions] = useState<Transaction[]>([]),
     navigation = useNavigate(),
     [user, setUser] = useState<user | null>(null),
     [error, setError] = useState(""),
     branchNames = ["Nairobi", "Machakos", "Mombasa", "Kisumu"],
     branchInventoryEndpoint =
-      "https://oop-2-production.up.railway.app/api/inventory/branch/e7e47915-2547-4347-83ee-52bf81072d68";
+      "https://oop-2-production.up.railway.app/api/products/branch/e7e47915-2547-4347-83ee-52bf81072d68",
+    branchTransactionsEndpoint =
+      "https://oop-2-production.up.railway.app/api/payments/history/branches";
 
   useEffect(() => {
     const user = localStorage.getItem("user");
@@ -65,23 +66,18 @@ const AdminHQ: React.FC = () => {
         const allPayments: Transaction[] = [];
 
         for (const _ of branchNames) {
-          const res = await fetch(branchInventoryEndpoint);
+          const res = await fetch(branchTransactionsEndpoint);
           const data: Transaction[] = await res.json();
 
           allPayments.push(...data);
         }
 
         // 🔽 Fetch this branch's transactions (using hardcoded ID or better: a selected branch)
-        const branchOnlyRes = await fetch(
-          `https://oop-2-production.up.railway.app/api/payments/history/branch/e7e47915-2547-4347-83ee-52bf81072d68`
-        );
-        const branchOnlyData = await branchOnlyRes.json();
 
         const inventoryRes = await fetch(branchInventoryEndpoint);
         const inventoryData = await inventoryRes.json();
 
         setTransactions(allPayments);
-        setBranchTransactions(branchOnlyData);
         setInventory(inventoryData);
         setLoading(false);
       } catch (err) {
@@ -151,9 +147,9 @@ const AdminHQ: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {/* {transactions &&
-                transactions.map((tx) => (
-                  <tr key={tx.id}>
+              {transactions &&
+                transactions.map((tx, index) => (
+                  <tr key={index}>
                     <td>{tx.userId}</td>
                     <td>{tx.orderId}</td>
                     <td>{tx.branch}</td>
@@ -161,7 +157,7 @@ const AdminHQ: React.FC = () => {
                     <td>{tx.status}</td>
                     <td>{new Date(tx.createdAt).toLocaleString()}</td>
                   </tr>
-                ))} */}
+                ))}
             </tbody>
           </table>
         </div>
@@ -176,19 +172,17 @@ const AdminHQ: React.FC = () => {
                 <th>Product</th>
                 <th>Description</th>
                 <th>Branch</th>
-                <th>Stock</th>
                 <th>Price</th>
               </tr>
             </thead>
             <tbody>
               {inventory &&
-                inventory.map((item) => (
-                  <tr key={item.id}>
-                    <td>{item.product.name}</td>
-                    <td>{item.product.description}</td>
-                    <td>{item.branch.name}</td>
+                inventory.map((item: any, index) => (
+                  <tr key={index}>
+                    <td>{item.name}</td>
+                    <td>{item.description}</td>
                     <td>{item.quantity}</td>
-                    <td>${item.product.price.toFixed(2)}</td>
+                    <td>${item.price.toFixed(2)}</td>
                   </tr>
                 ))}
             </tbody>

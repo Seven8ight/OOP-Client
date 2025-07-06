@@ -126,14 +126,14 @@ const BranchAdmin: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {/* {transactions.map((tx) => (
-                <tr key={tx.id}>
+              {transactions.map((tx, index) => (
+                <tr key={index}>
                   <td>{tx.userId}</td>
                   <td>${tx.price.toFixed(2)}</td>
                   <td>{tx.quantity}</td>
                   <td>{new Date().toString()}</td>
                 </tr>
-              ))} */}
+              ))}
             </tbody>
           </table>
         </div>
@@ -152,14 +152,14 @@ const BranchAdmin: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {/* {inventory.map((item) => (
-                <tr key={item.id}>
+              {inventory.map((item, index) => (
+                <tr key={index}>
                   <td>{item.name}</td>
                   <td>{item.description}</td>
                   <td>{item.quantity}</td>
                   <td>${item.price.toFixed(2)}</td>
                 </tr>
-              ))} */}
+              ))}
             </tbody>
           </table>
         </div>

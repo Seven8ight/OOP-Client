@@ -14,6 +14,7 @@ const UserSettings: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [transactions, setTransactions] = useState([]);
 
   // Form fields
   const [name, setName] = useState("");
@@ -50,6 +51,25 @@ const UserSettings: React.FC = () => {
         setLoading(false);
       });
   }, []);
+
+  useEffect(() => {
+    const fetchTransactions = async () => {
+      if (!user) return;
+
+      try {
+        const res = await fetch(
+          `https://oop-2-production.up.railway.app/api/payments/history/user/${user.id}`
+        );
+        if (!res.ok) throw new Error("Failed to fetch transactions.");
+        const data = await res.json();
+        setTransactions(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchTransactions();
+  }, [user]);
 
   const handleLogout = () => {
     localStorage.removeItem("user");
@@ -184,6 +204,36 @@ const UserSettings: React.FC = () => {
         </label>
 
         <button onClick={handleUpdate}>Update</button>
+
+        <div className="transactions">
+          <h2>Recent Transactions</h2>
+          {transactions.length === 0 ? (
+            <p>No transactions found.</p>
+          ) : (
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Amount (KES)</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {transactions.map((tx: any) => (
+                    <tr key={tx.id}>
+                      <td>{tx.orderId}</td>
+                      <td>KES {tx.amount.toFixed(2)}</td>
+                      <td>{tx.status}</td>
+                      <td>{new Date(tx.createdAt).toLocaleString()}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
 
         {success && <p className="success">{success}</p>}
         {error && <p className="error-msg">{error}</p>}
