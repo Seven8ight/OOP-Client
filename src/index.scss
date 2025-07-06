@@ -1485,6 +1485,21 @@
     width: 100%;
     max-width: 500px;
 
+    .back-button {
+      margin-bottom: 1rem;
+      background: transparent;
+      border: none;
+      color: #555;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+    }
+
     h2 {
       margin-bottom: 1.5rem;
       text-align: center;

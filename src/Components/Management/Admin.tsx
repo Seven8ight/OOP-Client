@@ -57,7 +57,7 @@ const AdminHQ: React.FC = () => {
 
       setUser(parsedUser);
     }
-  }, [user]);
+  }, []);
 
   useEffect(() => {
     const fetchPayments = async () => {
@@ -96,10 +96,7 @@ const AdminHQ: React.FC = () => {
   if (loading)
     return (
       <div className="AdminPage loading">
-        <button
-          className="back-button"
-          onClick={() => (window.location.href = "/")}
-        >
+        <button className="back-button" onClick={() => navigation("/")}>
           ← Back
         </button>
         <p>Loading admin data...</p>
@@ -109,10 +106,7 @@ const AdminHQ: React.FC = () => {
   if (error)
     return (
       <div className="AdminPage error">
-        <button
-          className="back-button"
-          onClick={() => (window.location.href = "/")}
-        >
+        <button className="back-button" onClick={() => navigation("/")}>
           ← Back
         </button>
         <p>{error}</p>
@@ -189,7 +183,7 @@ const AdminHQ: React.FC = () => {
             <tbody>
               {inventory &&
                 inventory.map((item) => (
-                  <tr key={item.branch.id}>
+                  <tr key={item.id}>
                     <td>{item.product.name}</td>
                     <td>{item.product.description}</td>
                     <td>{item.branch.name}</td>

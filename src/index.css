@@ -1270,6 +1270,19 @@
   width: 100%;
   max-width: 500px;
 }
+.AddProductPage .form-card .back-button {
+  margin-bottom: 1rem;
+  background: transparent;
+  border: none;
+  color: #555;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.AddProductPage .form-card .back-button:hover {
+  color: #000;
+  text-decoration: underline;
+}
 .AddProductPage .form-card h2 {
   margin-bottom: 1.5rem;
   text-align: center;

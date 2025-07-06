@@ -1,4 +1,3 @@
-// src/Components/Products/AddProduct.tsx
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router";
 
@@ -30,7 +29,7 @@ const AddProduct: React.FC = () => {
       description: form.description,
       price: parseFloat(form.price),
       quantity: parseInt(form.quantity),
-      branchId, // ✅ Use route param
+      branchId,
     };
 
     try {
@@ -62,9 +61,21 @@ const AddProduct: React.FC = () => {
     }
   };
 
+  const handleBack = () => {
+    navigate(
+      branchId === "e7e47915-2547-4347-83ee-52bf81072d68"
+        ? "/management/admin"
+        : `/management/branch/${branchId}`
+    );
+  };
+
   return (
     <div className="AddProductPage">
       <div className="form-card">
+        <button onClick={handleBack} className="back-button">
+          ← Back
+        </button>
+
         <h2>Add New Product</h2>
 
         <form onSubmit={handleSubmit}>

@@ -53,7 +53,7 @@ const BranchAdmin: React.FC = () => {
 
       setUser(parsedUser);
     }
-  }, [user]);
+  }, []);
 
   useEffect(() => {
     Promise.all([
@@ -74,9 +74,6 @@ const BranchAdmin: React.FC = () => {
         setError(error);
       });
   }, [id]);
-
-  console.log(inventory);
-  console.log(transactions);
 
   if (loading)
     return (
@@ -129,14 +126,14 @@ const BranchAdmin: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {transactions.map((tx) => (
+              {/* {transactions.map((tx) => (
                 <tr key={tx.id}>
                   <td>{tx.userId}</td>
                   <td>${tx.price.toFixed(2)}</td>
                   <td>{tx.quantity}</td>
                   <td>{new Date().toString()}</td>
                 </tr>
-              ))}
+              ))} */}
             </tbody>
           </table>
         </div>
@@ -155,14 +152,14 @@ const BranchAdmin: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {inventory.map((item) => (
+              {/* {inventory.map((item) => (
                 <tr key={item.id}>
                   <td>{item.name}</td>
                   <td>{item.description}</td>
                   <td>{item.quantity}</td>
                   <td>${item.price.toFixed(2)}</td>
                 </tr>
-              ))}
+              ))} */}
             </tbody>
           </table>
         </div>
