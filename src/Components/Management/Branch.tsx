@@ -1,6 +1,6 @@
 // src/Components/Admin/BranchAdmin.tsx
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 interface Branch {
   id: string;
@@ -18,6 +18,15 @@ interface InventoryItem {
   branch: Branch;
 }
 
+type user = {
+  id: string;
+  balance: number;
+  role: string;
+  username: string;
+  email: string;
+  password: string;
+};
+
 const branches = [
   { id: "e7e47915-2547-4347-83ee-52bf81072d68", name: "Nairobi" },
   { id: "ba2ca26e-9b6e-4495-a514-1043b2d88f24", name: "Machakos" },
@@ -28,11 +37,23 @@ const branches = [
 const branchFinder = (id: string) => branches.find((branch) => branch.id == id);
 
 const BranchAdmin: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
-  const [transactions, setTransactions] = useState<any[]>([]);
-  const [inventory, setInventory] = useState<InventoryItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const { id } = useParams<{ id: string }>(),
+    [transactions, setTransactions] = useState<any[]>([]),
+    [inventory, setInventory] = useState<InventoryItem[]>([]),
+    [loading, setLoading] = useState(true),
+    [error, setError] = useState(""),
+    [user, setUser] = useState<user | null>(null),
+    navigation = useNavigate();
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (!user) navigation("/");
+    else {
+      const parsedUser = JSON.parse(user);
+
+      setUser(parsedUser);
+    }
+  }, [user]);
 
   useEffect(() => {
     Promise.all([
@@ -83,7 +104,7 @@ const BranchAdmin: React.FC = () => {
       </div>
     );
 
-  return (
+  return user && user.role.toLowerCase() == "admin" ? (
     <div className="AdminPage">
       <div className="header">
         <h1>Branch Admin - {branchFinder(id as string)?.name}</h1>
@@ -113,7 +134,7 @@ const BranchAdmin: React.FC = () => {
                   <td>{tx.userId}</td>
                   <td>${tx.price.toFixed(2)}</td>
                   <td>{tx.quantity}</td>
-                  <td>{new Date().toLocaleString()}</td>
+                  <td>{new Date().toString()}</td>
                 </tr>
               ))}
             </tbody>
@@ -146,6 +167,11 @@ const BranchAdmin: React.FC = () => {
           </table>
         </div>
       </section>
+    </div>
+  ) : (
+    <div>
+      <p>You don't have access</p>
+      <button onClick={() => navigation("/")}>Go back</button>
     </div>
   );
 };

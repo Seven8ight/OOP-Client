@@ -122,8 +122,10 @@ const Auth = (): React.ReactNode => {
     [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [_, setError] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+  const [errorMsg, setMsg] = useState<string>("");
   const formRef = useRef<HTMLFormElement>(null);
+  const errorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleSubmit = async (event: Event) => {
@@ -144,6 +146,7 @@ const Auth = (): React.ReactNode => {
         const result = await response.text();
         if (!response.ok) {
           setError(true);
+          setMsg(result);
           console.error("Auth failed:", result);
           return;
         }
@@ -171,6 +174,13 @@ const Auth = (): React.ReactNode => {
     currentForm?.addEventListener("submit", handleSubmit);
     return () => currentForm?.removeEventListener("submit", handleSubmit);
   }, [username, email, password, page]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (error && errorRef.current) errorRef.current.style.display = "none";
+      setError(false);
+    }, 2000);
+  }, [error]);
 
   return (
     <div id="Auth">
@@ -208,6 +218,11 @@ const Auth = (): React.ReactNode => {
           />
         )}
       </div>
+      {error && (
+        <div ref={errorRef} id="errorMsg">
+          <p>{errorMsg}</p>
+        </div>
+      )}
       <div id="select">
         {page == "signup" ? (
           <p>

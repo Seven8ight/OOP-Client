@@ -1,5 +1,6 @@
 // src/Components/Admin/Admin.tsx
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 interface Branch {
   id: string;
@@ -27,19 +28,36 @@ interface Transaction {
   createdAt: string;
 }
 
+type user = {
+  id: string;
+  balance: number;
+  role: string;
+  username: string;
+  email: string;
+  password: string;
+};
+
 const AdminHQ: React.FC = () => {
-  const [_, setTransactions] = useState<Transaction[]>([]);
-  const [inventory, setInventory] = useState<InventoryItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [branchTransactions, setBranchTransactions] = useState<Transaction[]>(
-    []
-  );
+  const [_, setTransactions] = useState<Transaction[]>([]),
+    [inventory, setInventory] = useState<InventoryItem[]>([]),
+    [loading, setLoading] = useState(true),
+    [branchTransactions, setBranchTransactions] = useState<Transaction[]>([]),
+    navigation = useNavigate(),
+    [user, setUser] = useState<user | null>(null),
+    [error, setError] = useState(""),
+    branchNames = ["Nairobi", "Machakos", "Mombasa", "Kisumu"],
+    branchInventoryEndpoint =
+      "https://oop-2-production.up.railway.app/api/inventory/branch/e7e47915-2547-4347-83ee-52bf81072d68";
 
-  const [error, setError] = useState("");
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (!user) navigation("/");
+    else {
+      const parsedUser = JSON.parse(user);
 
-  const branchNames = ["Nairobi", "Machakos", "Mombasa", "Kisumu"];
-  const branchInventoryEndpoint =
-    "https://oop-2-production.up.railway.app/api/inventory/branch/e7e47915-2547-4347-83ee-52bf81072d68";
+      setUser(parsedUser);
+    }
+  }, [user]);
 
   useEffect(() => {
     const fetchPayments = async () => {
@@ -75,10 +93,6 @@ const AdminHQ: React.FC = () => {
     fetchPayments();
   }, []);
 
-  // console.log(transactions);
-  console.log(branchTransactions);
-  // console.log(inventory);
-
   if (loading)
     return (
       <div className="AdminPage loading">
@@ -105,7 +119,7 @@ const AdminHQ: React.FC = () => {
       </div>
     );
 
-  return (
+  return user && user.role.toLowerCase() == "admin" ? (
     <div className="AdminPage">
       <div className="header">
         <h1>Admin HQ</h1>
@@ -187,6 +201,11 @@ const AdminHQ: React.FC = () => {
           </table>
         </div>
       </section>
+    </div>
+  ) : (
+    <div>
+      <p>You don't have access</p>
+      <button onClick={() => navigation("/")}>Go back</button>
     </div>
   );
 };
