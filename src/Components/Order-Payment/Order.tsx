@@ -146,7 +146,12 @@ const OrdersPage: React.FC = () => {
                   <button onClick={() => selectOrder(order.id)}>Select</button>
                 )}
 
-                <button onClick={() => deleteOrder(order.id)}>Delete</button>
+                <button
+                  onClick={() => deleteOrder(order.id)}
+                  disabled={order.orderStatus === "PENDING" ? false : true}
+                >
+                  Delete
+                </button>
                 {order.orderStatus === "PENDING" && (
                   <button onClick={() => goToPayment(order.id)}>
                     Proceed to Payment
